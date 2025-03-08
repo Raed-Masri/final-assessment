@@ -93,14 +93,15 @@ const TodosContainer = ({ todos, toggleTodo, deleteTodo, editTodo }) => {
       ) : (
         <>
           <div className="flex flex-col justify-center items-center h-full">
-          <img
-            src={notasksImage}
-            alt="No tasks"
-            className="w-12 h-auto mb-4" 
-          />
-          <p className="text-gray-600 text-center">No tasks found. Add a new task to get started!</p>
-        </div>
-
+            <img
+              src={notasksImage}
+              alt="No tasks"
+              className="w-12 h-auto mb-4"
+            />
+            <p className="text-gray-600 text-center">
+              No tasks found. Add a new task to get started!
+            </p>
+          </div>
         </>
       )}
     </div>

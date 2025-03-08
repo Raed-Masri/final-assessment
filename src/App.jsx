@@ -60,8 +60,8 @@ const App = () => {
   return (
     <div className="flex justify-center items-center h-screen bg-blue-500">
       <div className="w-auto bg-white bg-opacity-90 border-2 border-gray-200 rounded-xl p-6 shadow-lg">
-        
         <h1 className="text-center text-3xl font-bold text-blue-500 mb-2">
+          <i className="fas fa-check"></i>
           Task Master
         </h1>
         <p className="text-center text-gray-600 mb-6">
@@ -82,9 +82,9 @@ const App = () => {
           </select>
           <button
             onClick={clearAll}
-            className=" px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700"
+            className=" px-4 py-2 bg-red-600 text-white rounded-lg  hover:bg-red-700"
           >
-            Clear All
+            <i className="fa fa-trash"></i>Clear All
           </button>
         </div>
 
@@ -98,15 +98,16 @@ const App = () => {
           deleteTodo={deleteTodo}
           editTodo={editTodo}
         />
-      
-        <div className="mt-4 flex justify-between items-center">
-          <span className="text-gray-700">{itemsLeft} items left</span>
-          <Filters filter={filter} setFilter={setFilter} />
-        </div>
+        {itemsLeft != 0 ? (
+          <div className="mt-4 flex justify-between items-center">
+            <span className="text-gray-700">{itemsLeft} items left</span>
+            <Filters filter={filter} setFilter={setFilter} />
+          </div>
+        ) : (
+          <></>
+        )}
       </div>
     </div>
-      
-
   );
 };
 
