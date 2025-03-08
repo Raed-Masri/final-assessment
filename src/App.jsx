@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import TodoInput from "./components/ToDoInput";
+import TodoInput from "./components/TaskForm";
 import SearchBar from "./components/SearchBar";
-import TodosContainer from "./components/ToDosContainer";
+import TodosContainer from "./components/TaskList";
 import Filters from "./components/Filters";
 
 const App = () => {
@@ -21,7 +21,7 @@ const App = () => {
   const addTodo = (text) => {
     setTodos([...todos, { id: Date.now(), text, completed: false }]);
   };
-  
+
   // toggle the completed status of a specific todo item in the todos
   const toggleTodo = (id) => {
     setTodos(
@@ -98,13 +98,15 @@ const App = () => {
           deleteTodo={deleteTodo}
           editTodo={editTodo}
         />
-
+      
         <div className="mt-4 flex justify-between items-center">
           <span className="text-gray-700">{itemsLeft} items left</span>
           <Filters filter={filter} setFilter={setFilter} />
         </div>
       </div>
     </div>
+      
+
   );
 };
 
